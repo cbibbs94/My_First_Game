@@ -5,9 +5,16 @@ The current direction of the game is to make a zeldaish style game where the poi
 
 More will be added depending on timeline 
 
-Current Objective:
-1.Find Srites for the game
-2. Shape the First functions for different actions that are anticipated to be in tha game.
-3. Find Background theme and color style
+Objectives:
+1. Find Sprites for the game - completedish
+2. Shape the First functions for different actions that are anticipated to be in tha game - In prgress.
+3. Find Background theme and color style - Completed 
 
-Projected Deadline: December 10, 2021
+New Objectives:
+1. Correct Move.js so that it works for this project
+2. Design the first background scene with sprites to test interactivity
+3. Possibly work on smalll script for talking interactions
+
+estimated deadline December 14, 2021
+
+
