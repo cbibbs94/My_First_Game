@@ -8,13 +8,27 @@ class Gameboard {
 
 
 
-    // This line of code is not working right now. Image will not load to the screen
     init() {
         const image = new Image();
-        image.onlaod = () => {
-            this.ctx.drawImage(image, 0, 0)
+        image.onload = () => {
+            this.ctx.drawImage(image, 33, 0, 94, 96, 4, 0, 659, 356)
         };
-        image.src = "Assets/Characters/HeroClose.png";
-        console.log('loaded')
+        image.src = "Assets/Objects/Floral Carpet A.png"
+        
+
+        const x = null  
+        const y = null
+
+        const player = new Image();
+        player.onload = () => {
+            this.ctx.drawImage(player, 0, 0, 32, 45, 1, 0, 60, 60  )
+        }
+        player.src = "Assets\\Characters\\HeroBroke.png"
+        
+
+        let element = player
+        move(element).withArrowKeys(x, y, player)
+
+
     }
 }
