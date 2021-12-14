@@ -15,20 +15,21 @@ class Gameboard {
         };
         image.src = "Assets/Objects/Floral Carpet A.png"
         
+        const player = new GameObject({
+            x: 123,
+            y: 56
+        })
 
-        const x = null  
-        const y = null
+        const princess = new GameObject({
+            x: 123, 
+            y: 100,
+            src: "Assets\\Characters\\Princess.png"
+        })
 
-        const player = new Image();
-        player.onload = () => {
-            this.ctx.drawImage(player, 0, 0, 32, 45, 1, 0, 60, 60  )
-        }
-        player.src = "Assets\\Characters\\HeroBroke.png"
-        
-
-        let element = player
-        move(element).withArrowKeys(x, y, player)
-
-
+       setTimeout(() => {
+           player.sprite.draw(this.ctx);
+           princess.sprite.draw(this.ctx);
+       },200) 
+     
     }
 }
