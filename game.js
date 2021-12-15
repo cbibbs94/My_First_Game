@@ -26,6 +26,12 @@ class Gameboard {
             src: "Assets\\Characters\\Princess.png"
         })
 
+        const villian = new GameObject({
+            x: 455,
+            y: 115,
+            src: 'Assets\\Characters\\RamKing.png'
+        })
+
        setTimeout(() => {
            player.sprite.draw(this.ctx);
            princess.sprite.draw(this.ctx);

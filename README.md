@@ -15,6 +15,6 @@ New Objectives:
 2. Design the first background scene with sprites to test interactivity
 3. Possibly work on smalll script for talking interactions
 
-estimated deadline December 14, 2021
+Update. Trying to add different mapp that fit what im trying to accomplish with my classes. The background is the only thing keeping me from working on movement abilities. hope to be further along soon.
 
 
