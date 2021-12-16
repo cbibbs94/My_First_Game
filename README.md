@@ -11,10 +11,11 @@ Objectives:
 3. Find Background theme and color style - Completed 
 
 New Objectives:
-1. Correct Move.js so that it works for this project
-2. Design the first background scene with sprites to test interactivity
-3. Possibly work on smalll script for talking interactions
+1. Correct Move.js so that it works for this project - (still doing this)
+2. Design the first background scene with sprites to test interactivity- completed
+3. Possibly work on smalll script for talking interactions - (completed, just not implemented)
 
-Update. Trying to add different mapp that fit what im trying to accomplish with my classes. The background is the only thing keeping me from working on movement abilities. hope to be further along soon.
+Update: First Map has been completed and now I REALLY need to get this movement to work out. I'm atttempting different methods with this, including a weirdly complicated tutorial and the method from a previous project
 
+ETA of next update: Decemeber 17, 2021???
 

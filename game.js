@@ -4,38 +4,34 @@ class Gameboard {
         this.element = config.element;
         this.canvas = this.element.querySelector(".game-canvas");
         this.ctx = this.canvas.getContext("2d")
+        this.map = null;
     }
 
 
+    startGameLoop() {
+        const step = () => {
+            this.ctx.clearRect(0,0,this.canvas.width, this.canvas.height);
+            
+            //Draw the Map
+            this.map.drawMapImage(this.ctx)
+            
+            //Draw the OBjects
+            Object.values(this.map.gameObjects).forEach(object => {
+               object.sprite.draw(this.ctx)
+           })
+            
+           requestAnimationFrame(() =>{
+                step();
+            })
+        }
+        step();
+    }
+
 
     init() {
-        const image = new Image();
-        image.onload = () => {
-            this.ctx.drawImage(image, 33, 0, 94, 96, 4, 0, 659, 356)
-        };
-        image.src = "Assets/Objects/Floral Carpet A.png"
+        this.map = new GameMap(window.GameMaps.RoyalRoom);
+    this.startGameLoop();
         
-        const player = new GameObject({
-            x: 123,
-            y: 56
-        })
-
-        const princess = new GameObject({
-            x: 123, 
-            y: 100,
-            src: "Assets\\Characters\\Princess.png"
-        })
-
-        const villian = new GameObject({
-            x: 455,
-            y: 115,
-            src: 'Assets\\Characters\\RamKing.png'
-        })
-
-       setTimeout(() => {
-           player.sprite.draw(this.ctx);
-           princess.sprite.draw(this.ctx);
-       },200) 
      
     }
 }

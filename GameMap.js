@@ -3,36 +3,42 @@ class GameMap {
         this.gameObjects = config.gameObjects;
         this.mapImage = new Image();
         this.mapImage.src = config.mapSrc
-        
-        // this.lowerImage = new Image();
-        // this.lowerImage.src = config.lowerSrc;
-
-        // this.upperImage = new Image();
-        // this.upperImage.src - config.upperSrc; 
+       
     }
 
-    drawLowerImage(ctx) {
-        ctx.drawImage(this.lowerImage, 0, 0)
-    }
-
-    drawUpperImage(ctx) {
-        ctx.drawImage(this.upperImage, 0, 0)
-    }
-
+        drawMapImage(ctx) {
+            ctx.drawImage(this.mapImage, 0, 0, 700, 390 )
+        }
 }
 
-// window.GameMaps = {
-//     FirstRoom: {
-//         mapSrc: 
-//     },
+window.GameMaps = {
+    RoyalRoom: {
+        mapSrc: "Assets\\Objects\\Royal Room.png",
+        gameObjects: {
+            player: new GameObject({
+                x: 320,
+                y: 300,
+            }),
+            princess: new GameObject({
+                x: 334,
+                y: 160,
+                src: "Assets\\Characters\\PrincessFormal.png"
+            }),
+            Villain: new GameObject({
+                x: 390,
+                y: 300,
+                src: 'Assets\\Characters\\RamKing.png'
+            })
+        }
+    },
 
-//     SecondRoom: {
+    SecondRoom: {
 
-//     },
+    },
 
-//     ThirdRoom: {
+    ThirdRoom: {
 
-//     }
+    }
 
 
-// }
+}
