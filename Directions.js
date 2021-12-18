@@ -9,7 +9,7 @@ class DirectionInput {
             "ArrowRight": "right",
             "KeyD": "right",
             "ArrowLeft": "left",
-            "KeyA": "left"
+            "KeyA": "left",
         }
     }
 
@@ -19,7 +19,7 @@ class DirectionInput {
 
     init() {
         document.addEventListener("keydown", (e) => {
-            const direction = this.map[e.code];
+            const dir = this.map[e.code];
             if(dir && this.heldDirection.indexOf(dir) === -1) {
                 this.heldDirection.unshift(dir);
                 console.log(this.heldDirections)
@@ -28,7 +28,7 @@ class DirectionInput {
 
         document.addEventListener("keyup", (e) => {
             const dir = this.map[e.code];
-            const index = this.heldDirection.indexof(dir);
+            const index = this.heldDirection.indexOf(dir);
             if (index > -1){
                 this.heldDirection.splice(index, 1);
                 console.log(this.heldDirection)

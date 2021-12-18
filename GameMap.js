@@ -16,6 +16,7 @@ window.GameMaps = {
         mapSrc: "Assets\\Objects\\Royal Room.png",
         gameObjects: {
             player: new Player({
+                isPlayerControlled: true,
                 x: 320,
                 y: 300,
             }),

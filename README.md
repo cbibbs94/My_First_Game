@@ -17,5 +17,5 @@ New Objectives:
 
 Update: First Map has been completed and now I REALLY need to get this movement to work out. I'm atttempting different methods with this, including a weirdly complicated tutorial and the method from a previous project
 
-ETA of next update: Decemeber 17, 2021???
+Update: Movement Finally works! So I should be getting the rest of the functions done by sunday night.
 

@@ -17,9 +17,9 @@ class Gameboard {
             
             //Draw the OBjects
             Object.values(this.map.gameObjects).forEach(object => {
-                // object.update({
-                //     arrow: this.directionInput.direction 
-                // })
+                 object.update({
+                    arrow: this.directionInput.direction 
+                })
                object.sprite.draw(this.ctx);
            })
             
@@ -33,7 +33,9 @@ class Gameboard {
 
     init() {
         this.map = new GameMap(window.GameMaps.RoyalRoom);
+        this.directionInput = new DirectionInput();
         this.directionInput.init();
+
     
         this.startGameLoop();
         
