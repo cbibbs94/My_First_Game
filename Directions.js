@@ -1,3 +1,4 @@
+//can move with arrows or 'wasd'
 class DirectionInput {
     constructor() {
         this.heldDirection = [];
@@ -17,6 +18,8 @@ class DirectionInput {
         return this.heldDirection[0];
     }
 
+
+    //Keeps track of what keys are held and not held in order to execute better movement
     init() {
         document.addEventListener("keydown", (e) => {
             const dir = this.map[e.code];

@@ -1,4 +1,4 @@
-
+// Makes the whole GameBoard 
 class Gameboard {
     constructor(config) {
         this.element = config.element;
@@ -7,7 +7,7 @@ class Gameboard {
         this.map = null;
     }
 
-
+    //constantly clears and redraws the map to account for any changes to objects that moved 
     startGameLoop() {
         const step = () => {
             this.ctx.clearRect(0,0,this.canvas.width, this.canvas.height);

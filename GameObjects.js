@@ -1,3 +1,5 @@
+//This is the basis of which ALL general objects start from and get defined further to become a sprite or playable Character 
+
 class GameObject{
     constructor(config) {
         this.x = config.x || 0;

@@ -19,3 +19,5 @@ Update: First Map has been completed and now I REALLY need to get this movement 
 
 Update: Movement Finally works! So I should be getting the rest of the functions done by sunday night.
 
+after class Update: Its gone be a looong Weekend see ya Monday. (maybe with a semi finished game)
+

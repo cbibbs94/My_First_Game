@@ -1,3 +1,4 @@
+//constructs and draws the map
 class GameMap {
     constructor(config) {
         this.gameObjects = config.gameObjects;
@@ -11,6 +12,7 @@ class GameMap {
         }
 }
 
+//Different Rooms that can show up in the canvas along with some defaault objects that spawn when each room is loaded
 window.GameMaps = {
     RoyalRoom: {
         mapSrc: "Assets\\Objects\\Royal Room.png",
