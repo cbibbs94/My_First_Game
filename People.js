@@ -6,17 +6,17 @@ class Player extends GameObject {
         this.isPlayerControlled = config.isPlayerControlled || false;
 
         this.directionUpdate = {
-            "up": ["y", -1],
-            "down": ["y", 1],
-            "left": ["x", -1],
-            "right": ["x", 1],
+            "Up": ["y", -1],
+            "Down": ["y", 1],
+            "Left": ["x", -1],
+            "Right": ["x", 1],
         }
     }
 
     //this essentially calls both the updatePosititon and updateSprite methods
     update(state) {
         this.updatePosition();
-        // this.updateSprite(state);
+        this.updateSprite(state);
 
         if(this.isPlayerControlled && this.movingProgressRemaining === 0 && state.arrow) {
             this.direction = state.arrow;

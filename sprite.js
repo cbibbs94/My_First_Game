@@ -53,13 +53,13 @@ class Sprite {
 
 
     //This was supposed to control how each direction was connected to a sprtie animation - currently breaking the whole page
-    // setAnimation(key){
-    //     if (this.currentAnimation !== key) {
-    //         this.currentAnimation = key;
-    //         this.currentAnimationFrame = 0;
-    //         this.animationFrameProgress = this.animationFrameLimit;
-    //     }
-    // }
+    setAnimation(key){
+        if (this.currentAnimation !== key) {
+            this.currentAnimation = key;
+            this.currentAnimationFrame = 0;
+            this.animationFrameProgress = this.animationFrameLimit;
+        }
+    }
 
 
     updateAnimationProgress() {
