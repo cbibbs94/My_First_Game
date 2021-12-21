@@ -15,33 +15,81 @@ class Player extends GameObject {
 
     //this essentially calls both the updatePosititon and updateSprite methods
     update(state) {
+        if (this.movingProgressRemaining > 0) {
         this.updatePosition();
-        this.updateSprite(state);
+        } else {
 
-        if(this.isPlayerControlled && this.movingProgressRemaining === 0 && state.arrow) {
-            this.direction = state.arrow;
-            this.movingProgressRemaining = 1;
+            //more cases can be added
+
+
+
+            //case: keyboard ready and have arrow pressed
+            if(!state.map.isCutScenePlaying && this.isPlayerControlled && state.arrow) {
+             this.startBehavior(state, {
+                 type: 'walk',
+                 direction: state.arrow
+                });
+            }
+            this.updateSprite(state);
+        }
+    }
+
+
+    
+    startBehavior(state, behavior) {
+        //set Character Direction to whatever behavior has
+        this.direction = behavior.direction;
+        if(behavior.type === "walk") {
+            
+            //Stop at location if next space isn't free
+            if (state.map.isSpaceTaken(this.x, this.y, this.direction)) {
+                
+                behavior.retry && setTimeout(() => {
+                    startBehavior(state, behavior)
+                }, 10);
+                
+                return;
+            }
+            // walk if space is free
+            state.map.moveWall(this.x, this.y, this.direction);
+            this.movingProgressRemaining = 16;
+            this.updateSprite(state);
+        }
+
+        if (behavior.type === "stand") {
+            setTimeout(() => {
+                utils.emitEvent("PersonStandComplete", {
+                    whoId: this.id
+                })
+            }, behavior.time);
         }
     }
 
     //this updates the Position
     updatePosition() {
-        if (this.movingProgressRemaining > 0) {
-            const [property, change] = this.directionUpdate[this.direction]
+            const [property, change] = this.directionUpdate[this.direction];
             this[property] += change;
             this.movingProgressRemaining -= 1;
-        }
+        
+
+            if (this.movingProgressRemaining === 0) {
+                //Finshed the walk!
+                utils.emitEvent("PersonWalkingComplete", {
+                    whoId: this.id
+                })
+
+            }
     }
 
 
     //this updates the sprite animation based on wether or not the sprite is moving
-    updateSprite(state){
-        console.log(this.direction)
-        this.sprite.setAnimation("idle"+ this.direction);
-
+    updateSprite(){
         if(this.movingProgressRemaining > 0) {
             this.sprite.setAnimation("walk"+this.direction);
+            return;
         }
+        this.sprite.setAnimation("idle"+this.direction);
+
     }
 
 }

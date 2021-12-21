@@ -11,17 +11,28 @@ class Gameboard {
     startGameLoop() {
         const step = () => {
             this.ctx.clearRect(0,0,this.canvas.width, this.canvas.height);
+
+            // //Establish Camera person - work in progress
+            // const cameraPerson = this.map.gameObjects.player
+
+            //update all objects
+            Object.values(this.map.gameObjects).forEach(object => {
+                object.update({
+                   arrow: this.directionInput.direction,
+                   map: this.map, 
+                })
+            })
             
             //Draw the Map
             this.map.drawMapImage(this.ctx)
             
             //Draw the OBjects
-            Object.values(this.map.gameObjects).forEach(object => {
-                 object.update({
-                    arrow: this.directionInput.direction 
-                })
-               object.sprite.draw(this.ctx);
-           })
+            Object.values(this.map.gameObjects).sort((a,b) => {
+                return a.y - b.y;
+            }).forEach(object => {
+                object.sprite.draw(this.ctx,);                   
+            })
+        
             
            requestAnimationFrame(() =>{
                 step();
@@ -33,11 +44,26 @@ class Gameboard {
 
     init() {
         this.map = new GameMap(window.GameMaps.RoyalRoom);
+        this.map.mountObjects();
+
+
         this.directionInput = new DirectionInput();
         this.directionInput.init();
 
     
         this.startGameLoop();
+        this.map.startCutscene([
+            { who: "player", type: "walk", direction: "Up" },
+            { who: "player", type: "walk", direction: "Up"},
+            { who: "player", type: "walk", direction: "Right"},
+            { who: "player", type: "walk", direction: "Up"},
+            { who: "player", type: "walk", direction: "Up"},
+            { who: "player", type: "walk", direction: "Up"},
+            { who: "player", type: "walk", direction: "Up"},
+            {who: "villain", type: "stand", direction: "Up", time: 3300}
+
+            
+        ])
         
      
     }

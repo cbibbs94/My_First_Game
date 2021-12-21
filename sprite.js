@@ -39,7 +39,7 @@ class Sprite {
 
         //Was supposed to control frame progress and  how fast naimation looked - not currently working as expected, does not control the speed of animation
 
-        this.animationFrameLimit = config.animationFrameLimit || 100;
+        this.animationFrameLimit = config.animationFrameLimit || 16;
         this.animationFrameProgress = this.animationFrameLimit;
 
         //game object
@@ -52,7 +52,7 @@ class Sprite {
     }
 
 
-    //This was supposed to control how each direction was connected to a sprtie animation - currently breaking the whole page
+   //Animation for Sprite Movement
     setAnimation(key){
         if (this.currentAnimation !== key) {
             this.currentAnimation = key;
@@ -72,7 +72,6 @@ class Sprite {
         //reset the counter
         this.animationFrameProgress = this.animationFrameLimit;
         this.currentAnimationFrame += 1;
-        console.log("This should work", this.animationFrameLimit)
         if (this.frame === undefined) {
             this.currentAnimationFrame = 0;
         }
@@ -80,9 +79,9 @@ class Sprite {
 
 
     //Draws the content to the screen
-    draw(ctx) {
-        const x = this.gameObject.x;
-        const y = this.gameObject.y;
+    draw(ctx, cameraPerson) {
+        const x = this.gameObject.x  
+        const y = this.gameObject.y
 
 
         this.isShadowLoaded && ctx.drawImage(this.shadow, x, y) 
