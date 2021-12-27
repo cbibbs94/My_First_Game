@@ -35,7 +35,7 @@ class GameObject{
     async doBehaviorEvent(map) {
         //don't do anything if there is more improtant stuff going on or config is empty
 
-        if(map.isCutScenePlaying || this.behaviorLoop.length === 0) {
+        if(map.isCutScenePlaying || this.behaviorLoop.length === 0 || this.isStanding) {
             return;
         }
 

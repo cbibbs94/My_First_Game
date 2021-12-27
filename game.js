@@ -43,7 +43,7 @@ class Gameboard {
 
 
     init() {
-        this.map = new GameMap(window.GameMaps.RoyalRoom);
+        this.map = new GameMap(window.GameMaps.OrinDale);
         this.map.mountObjects();
 
 
@@ -52,18 +52,18 @@ class Gameboard {
 
     
         this.startGameLoop();
-        this.map.startCutscene([
-            { who: "player", type: "walk", direction: "Up" },
-            { who: "player", type: "walk", direction: "Up"},
-            { who: "player", type: "walk", direction: "Right"},
-            { who: "player", type: "walk", direction: "Up"},
-            { who: "player", type: "walk", direction: "Up"},
-            { who: "player", type: "walk", direction: "Up"},
-            { who: "player", type: "walk", direction: "Up"},
-            {who: "villain", type: "stand", direction: "Up", time: 3300}
+        // this.map.startCutscene([
+        //     { who: "player", type: "walk", direction: "Up" },
+        //     { who: "player", type: "walk", direction: "Up"},
+        //     { who: "player", type: "walk", direction: "Right"},
+        //     { who: "player", type: "walk", direction: "Up"},
+        //     { who: "player", type: "walk", direction: "Up"},
+        //     { who: "player", type: "walk", direction: "Up"},
+        //     { who: "player", type: "walk", direction: "Up"},
+        //     {who: "villain", type: "stand", direction: "Up", time: 3300}
 
             
-        ])
+        // ])
         
      
     }

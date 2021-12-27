@@ -5,7 +5,7 @@ class GameMap {
         this.walls = config.walls || [];
         this.mapImage = new Image();
         this.mapImage.src = config.mapSrc
-        this.isCutScenePlaying = true;
+        this.isCutScenePlaying = false;
        
     }
 
@@ -47,7 +47,7 @@ class GameMap {
             this.isCutScenePlaying = false;
 
             //reset npc to idle behavior
-            Object.values(this.gameOjects).forEach(object => object.doBehaviorEvent(this))
+            Object.values(this.gameObjects).forEach(object => object.doBehaviorEvent(this))
         }
 
         addWall(x,y) {
@@ -68,7 +68,7 @@ class GameMap {
     }
 
 
-//Different Rooms that can show up in the canvas along with some defaault objects that spawn when each room is loaded
+//Different Rooms that can show up in the canvas along with some default objects that spawn when each room is loaded
 window.GameMaps = {
     RoyalRoom: {
         mapSrc: "Assets\\Objects\\Royal Room.png",
@@ -115,8 +115,15 @@ window.GameMaps = {
         } 
     },
 
-    SecondRoom: {
-
+    OrinDale: {
+        mapSrc: "Assets\\Objects\\OrinDale.png",
+        gameObjects: {
+            player: new Player ({
+                isPlayerControlled:true,
+                x: 334,
+                y: 120,
+            }),
+        }
     },
 
     ThirdRoom: {
