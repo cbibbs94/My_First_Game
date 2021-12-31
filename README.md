@@ -21,3 +21,5 @@ Update: Movement Finally works! So I should be getting the rest of the functions
 
 after class Update: Its gone be a looong Weekend see ya Monday. (maybe with a semi finished game)
 
+**This ReadMe needs to be updated please disregard whats going on for now until i can update this  ** 12/30/21
+
