@@ -31,7 +31,7 @@ class OverworldEvent {
         }, {
             type: "walk",
             direction: this.event.direction,
-            retry:true
+            retry: true
         })
 
         //set up handler to complete when correct person is done walking, then resolve the event 
@@ -43,6 +43,14 @@ class OverworldEvent {
         }
         document.addEventListener("PersonWalkingComplete", completeHandler)
         
+    }
+
+    textMessage(resolve) {
+        const message = new TextMessage ({
+            text: this.event.text,
+            onComplete: () => resolve()
+        })
+        message.init( document.querySelector(".game-container") )
     }
 
     init() {

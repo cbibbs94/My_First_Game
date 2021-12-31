@@ -1,4 +1,14 @@
-/* Style Sheet- Nothing here yet, but there will be just watch! */
+:root {
+    --border-color: #1A68A6ff;
+    --dialog-background: #FFF3B4;
+
+    --menu-background: #ffe8d2;
+    --menu-border-color: #a48465;
+    --menu-font-color: #3a160d;
+    --menu-selected-background: #7fc2ff;
+}
+
+
 *{
     box-sizing: border-box;
 }

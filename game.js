@@ -12,7 +12,7 @@ class Gameboard {
         const step = () => {
             this.ctx.clearRect(0,0,this.canvas.width, this.canvas.height);
 
-            // //Establish Camera person - work in progress
+            //Establish Camera person - work in progress
             // const cameraPerson = this.map.gameObjects.player
 
             //update all objects
@@ -41,29 +41,39 @@ class Gameboard {
         step();
     }
 
+    bindActionInput() {
+        new KeyPressListener('Enter', () => {
+            //is there someone here to talk to?
+            this.map.checkForActionCutscene()
+        } )
+    }
+
 
     init() {
-        this.map = new GameMap(window.GameMaps.OrinDale);
+        this.map = new GameMap(window.GameMaps.RoyalRoom);
         this.map.mountObjects();
 
+        this.bindActionInput();
 
         this.directionInput = new DirectionInput();
         this.directionInput.init();
 
     
         this.startGameLoop();
-        // this.map.startCutscene([
-        //     { who: "player", type: "walk", direction: "Up" },
-        //     { who: "player", type: "walk", direction: "Up"},
-        //     { who: "player", type: "walk", direction: "Right"},
-        //     { who: "player", type: "walk", direction: "Up"},
-        //     { who: "player", type: "walk", direction: "Up"},
-        //     { who: "player", type: "walk", direction: "Up"},
-        //     { who: "player", type: "walk", direction: "Up"},
-        //     {who: "villain", type: "stand", direction: "Up", time: 3300}
-
+        this.map.startCutscene([
             
-        // ])
+                { who: "player", type: "walk", direction: "Up" },
+                { who: "player", type: "walk", direction: "Up"},
+                { who: "player", type: "walk", direction: "Right"},
+                { who: "player", type: "walk", direction: "Up"},
+                { who: "player", type: "walk", direction: "Up"},
+                { who: "player", type: "walk", direction: "Up"},
+                { who: "player", type: "walk", direction: "Up"},
+                //{who: "villain", type: "stand", direction: "Up", time: 200},
+                {type: "textMessage", text: "Aye Bruh Welcome! This is a test Room While the Devs work their Magic in the Back. Stay Tuned for the Adventure!" }
+            
+            
+        ])
         
      
     }

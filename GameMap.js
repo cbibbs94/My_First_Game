@@ -50,6 +50,16 @@ class GameMap {
             Object.values(this.gameObjects).forEach(object => object.doBehaviorEvent(this))
         }
 
+        checkForActionCutscene() {
+            const player = this.gameObjects["player"];
+            const nextCoords = utils.nextPosition(player.x, player.y, player.direction);
+            const match = Object.values(this.gameObjects).find(object => {
+                return `${object.x},${object.y}` === `${nextCoords.x},${nextCoords.y}`
+            });
+            console.log({ match });
+             
+        }
+
         addWall(x,y) {
             this.walls[`${x},${y}`] = true;
         }
