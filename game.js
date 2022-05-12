@@ -69,7 +69,8 @@ class Gameboard {
                 { who: "player", type: "walk", direction: "Up"},
                 { who: "player", type: "walk", direction: "Up"},
                 { who: "player", type: "walk", direction: "Up"},
-                //{who: "villain", type: "stand", direction: "Up", time: 200},
+                
+                {who: "villain", type: "stand", direction: "Up", time: 200},
                 {type: "textMessage", text: "Aye Bruh Welcome! This is a test Room While the Devs work their Magic in the Back. Stay Tuned for the Adventure!" }
             
             
